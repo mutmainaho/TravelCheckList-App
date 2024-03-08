@@ -7,16 +7,40 @@ import Stats from "./component/stats";
 
 export default function App() {
   const [items, setItems] = useState([]);
+  // const [numItems, setNumItems] = useState([]);
+  //to add items
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
+  }
+  //to delete iteams
+  function handleDeleteItems(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  }
+  function handleclearList(id) {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) setItems([]);
   }
   return (
     <div className="app">
       <Logo />
       <Form addItemsHandle={handleAddItems} />
-      <PackagingList item={items} />
+      <PackagingList
+        onDeleteItem={handleDeleteItems}
+        item={items}
+        onToggleItem={handleToggleItem}
+        onClearList={handleclearList}
+      />
       {/* <Item /> */}
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
