@@ -14,7 +14,7 @@ const initialItems = [
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 58%;
 }
 
 body {
@@ -39,7 +39,7 @@ h1 {
   font-size: 6rem;
   text-transform: uppercase;
   font-weight: 400;
-  word-spacing: 30px;
+  word-spacing: 20px;
   letter-spacing: -5px;
   padding: 2.4rem 0;
 }
@@ -80,7 +80,7 @@ input {
 .list {
   background-color: #5a3e2b;
   color: #ffebb3;
-  padding: 4rem 0;
+  padding: 2rem 0;
 
   display: flex;
   justify-content: space-between;
@@ -136,4 +136,18 @@ input[type="checkbox"] {
   text-align: center;
   font-weight: 700;
   padding: 3.2rem 0;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .add-form {
+    background-color: #e5771f;
+    padding: 2.8rem 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
 }
