@@ -141,6 +141,7 @@ input[type="checkbox"] {
 @media (max-width: 800px) {
   h1 {
     font-size: 2rem;
+    letter-spacing: -1px;
   }
   .add-form {
     background-color: #e5771f;
